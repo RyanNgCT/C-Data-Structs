@@ -16,9 +16,14 @@ int main() {
     node_t* elementToFind = findNode(head, 16);
     printf("%d\n", elementToFind->value);
 
-    insertAfterNode(elementToFind, createNewNode(88));
+    node_t* secondNode = createNewNode(88);
+    insertAfterNode(elementToFind, secondNode);
 
-    printf("\nAfter: ");
+    printf("\nAfter addition: ");
+    printList(head);
+
+    deleteNode(&head, secondNode);
+    printf("\nAfter deletion: ");
     printList(head);
 
     node_t* curr = head;

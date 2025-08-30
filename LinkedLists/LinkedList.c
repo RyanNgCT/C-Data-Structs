@@ -53,3 +53,24 @@ node_t* findNode(node_t* head, int val) {
     }
     return NULL;
 }
+
+void deleteNode(node_t** head, node_t* toDelete) {
+    if (*head == NULL) {
+        return;
+    }
+    else if (*head == toDelete) {
+        *head = toDelete->next;
+        free(toDelete);
+    }
+    else {
+        node_t* prev = *head;
+        while (prev -> next != NULL) {
+            if (prev -> next == toDelete) {
+                prev->next = toDelete->next;
+                free(toDelete);
+            }
+            prev = prev->next;
+        }
+    }
+    return;
+}
