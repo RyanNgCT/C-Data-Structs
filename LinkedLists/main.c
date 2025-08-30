@@ -2,7 +2,9 @@
 #include <stdio.h>
 
 int main() {
-    node_t* head = NULL;
+    node_t* head;
+    init(&head);
+    
     node_t* new;
     for(int i = 0; i <= 20; i++) {
         new = createNewNode(i);

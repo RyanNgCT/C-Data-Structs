@@ -1,6 +1,10 @@
 #include "LinkedList.h"
 #include <stdio.h>
 
+void init(node_t** head) {
+    *head = NULL;
+}
+
 void printList(node_t* head) {
     node_t* temp = head;
 
