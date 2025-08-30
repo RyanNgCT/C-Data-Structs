@@ -18,5 +18,12 @@ int main() {
         }
     }
     printList(head);
+
+    node_t* curr = head;
+    while (curr != NULL) {
+        node_t* temp = curr;
+        curr = curr->next;
+        free(temp);
+    }
     return 0;
 }
