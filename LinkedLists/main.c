@@ -2,27 +2,21 @@
 #include <stdio.h>
 
 int main() {
-    node_t* head;
-    node_t* tmp;
-    node_t n1, n2, n3;
-
-    tmp = createNewNode(10);
-
-    n1.value = 45;
-    n2.value = 8;
-    n3.value = 32;
-
-    head = tmp;
-    head->next = &n3;
-    n3.next = &n2; 
-    n2.next = &n1;
-    n1.next = NULL;
-
-    printNode(head);
-
-    head = head -> next;
-
-    printNode(head);
-    
+    node_t* head = NULL;
+    node_t* new;
+    for(int i = 0; i <= 20; i++) {
+        new = createNewNode(i);
+        if (head == NULL) {
+            head = new;
+        }
+        else {
+            node_t* tmp = head;
+            while (tmp->next != NULL) {
+                tmp = tmp->next;
+            }
+            tmp->next = new;
+        }
+    }
+    printList(head);
     return 0;
 }

@@ -1,11 +1,11 @@
 #include "LinkedList.h"
 #include <stdio.h>
 
-void printNode(node_t* head) {
+void printList(node_t* head) {
     node_t* temp = head;
 
     while (temp != NULL) {
-        printf("%d ", temp->value);
+        printf("%d -> ", temp->value);
         temp = temp-> next;
     }
     printf("\n");
