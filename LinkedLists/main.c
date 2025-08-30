@@ -6,17 +6,19 @@ int main() {
     node_t* new;
     for(int i = 0; i <= 20; i++) {
         new = createNewNode(i);
-        if (head == NULL) {
-            head = new;
-        }
-        else {
-            node_t* tmp = head;
-            while (tmp->next != NULL) {
-                tmp = tmp->next;
-            }
-            tmp->next = new;
-        }
+        // insertAtHead(&head, new);
+        insertAtTail(&head, new);
     }
+
+    printf("Before: ");
+    printList(head);
+    
+    node_t* elementToFind = findNode(head, 16);
+    printf("%d\n", elementToFind->value);
+
+    insertAfterNode(elementToFind, createNewNode(88));
+
+    printf("\nAfter: ");
     printList(head);
 
     node_t* curr = head;
