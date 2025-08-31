@@ -3,6 +3,7 @@
 
 void init(node_t** head) {
     *head = NULL;
+    return;
 }
 
 void printList(node_t* head) {
@@ -13,6 +14,7 @@ void printList(node_t* head) {
         temp = temp-> next;
     }
     printf("\n");
+    return;
 }
 
 node_t* createNewNode(int val) {
@@ -28,7 +30,7 @@ node_t* insertAtHead(node_t** head, node_t* toInsert) {
     return toInsert;
 }
 
-node_t* insertAtTail(node_t** head, node_t* toInsert) {
+void insertAtTail(node_t** head, node_t* toInsert) {
     if (*head == NULL) {
         *head = toInsert;
     }
@@ -39,12 +41,13 @@ node_t* insertAtTail(node_t** head, node_t* toInsert) {
         }
         tmp->next = toInsert;
     }
-    return toInsert;
+    return;
 }
 
 void insertAfterNode(node_t* target, node_t* toInsert) {
     toInsert->next = target->next;
     target->next = toInsert;
+    return;
 }
 
 node_t* findNode(node_t* head, int val) {
