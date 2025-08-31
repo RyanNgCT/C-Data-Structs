@@ -82,9 +82,11 @@ void deleteNode(node_t** head, node_t* toDelete) {
         }
     }
     else {
-        toDelete->prev->next = toDelete->next;
+        if (toDelete->prev != NULL) {
+            toDelete->prev->next = toDelete->next;
+        }
         if (toDelete->next != NULL) {
-            toDelete->next->prev = toDelete-> prev;
+            toDelete->next->prev = toDelete->prev;
         }
     }
     // cleanup
